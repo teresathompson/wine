@@ -14,7 +14,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Your ML workflow goes here
-          #-m pip install --upgrade pip
+          -m pip install --upgrade pip
           pip install -r requirements.txt
           python train.py
           echo "MODEL METRICS"> report.md
