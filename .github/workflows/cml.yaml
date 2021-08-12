@@ -17,6 +17,8 @@ jobs:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v1
       - name: cml run
+        env:
+          repo_token: ${{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}}
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
