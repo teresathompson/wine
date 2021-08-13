@@ -11,14 +11,10 @@ jobs:
       - uses: actions/checkout@v2   
       - name: cml_run
         env:
-          repo-token: ${{secrets.MYTOKEN}}
+          REPO_TOKEN: ${{secrets.MYTOKEN}}
         run: |
-          echo "The GitHub Action Secret will be masked:  "
-          echo ${{ secrets.MYTOKEN }}
-          echo "Trick to echo GitHub Actions Secret:  "
-          echo ${{secrets.MYTOKEN}} | sed 's/./& /g' 
           # Your ML workflow goes here
-          #-m pip install --upgrade pip
+          -m pip install --upgrade pip
           pip install -r requirements.txt
           python train.py
           echo "MODEL METRICS"> report.md
