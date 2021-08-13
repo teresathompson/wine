@@ -13,7 +13,6 @@ jobs:
         env:
           REPO_TOKEN: ${{secrets.MYTOKEN}}
         run: |
-          # Your ML workflow goes here
           -m pip install --upgrade pip
           pip install -r requirements.txt
           python train.py
