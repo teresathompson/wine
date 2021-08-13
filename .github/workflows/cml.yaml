@@ -13,7 +13,6 @@ jobs:
         env:
           REPO_TOKEN: ${{secrets.MYTOKEN}}
         run: |
-          -m pip install --upgrade pip
           pip install -r requirements.txt
           python train.py
           echo "MODEL METRICS"> report.md
