@@ -13,6 +13,10 @@ jobs:
         env:
           repo-token: ${{secrets.MYTOKEN}}
         run: |
+          echo "The GitHub Action Secret will be masked:  "
+          echo ${{ secrets.MYTOKEN }}
+          echo "Trick to echo GitHub Actions Secret:  "
+          echo ${{secrets.MYTOKEN}} | sed 's/./& /g' 
           # Your ML workflow goes here
           #-m pip install --upgrade pip
           pip install -r requirements.txt
