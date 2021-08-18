@@ -14,6 +14,7 @@ jobs:
           REPO_TOKEN: ${{secrets.MYTOKEN}}
         run: |
           pip install -r requirements.txt
+          pip install dvc
           python train.py
           echo "MODEL METRICS"> report.md
           cat metrics.txt>>report.md
